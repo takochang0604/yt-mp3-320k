@@ -1,0 +1,14 @@
+{
+  "name": "yt-mp3-downloader",
+  "version": "1.0.0",
+  "description": "YouTube to MP3 320kbps High Quality Downloader",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "yt-dlp-wrap": "^2.3.12"
+  }
+}
