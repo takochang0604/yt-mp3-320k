@@ -37,6 +37,18 @@ document.addEventListener('DOMContentLoaded', () => {
   createParticles();
   checkStatus();
   setupEventListeners();
+
+  // Help modal
+  const helpModal = document.getElementById('helpModal');
+  document.getElementById('helpBtn').addEventListener('click', () => {
+    helpModal.style.display = 'flex';
+  });
+  document.getElementById('helpClose').addEventListener('click', () => {
+    helpModal.style.display = 'none';
+  });
+  helpModal.addEventListener('click', (e) => {
+    if (e.target === helpModal) helpModal.style.display = 'none';
+  });
 });
 
 // ── Create Floating Particles ──

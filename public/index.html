@@ -31,9 +31,12 @@
           <p class="subtitle">高音質 320kbps 下載器</p>
         </div>
       </div>
-      <div class="badge" id="statusBadge">
-        <span class="badge-dot"></span>
-        <span id="statusText">檢查中...</span>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div class="badge" id="statusBadge">
+          <span class="badge-dot"></span>
+          <span id="statusText">檢查中...</span>
+        </div>
+        <button id="helpBtn" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:50%;width:34px;height:34px;color:rgba(240,240,245,0.6);cursor:pointer;font-size:0.9rem;font-weight:700;font-family:var(--font);display:flex;align-items:center;justify-content:center;transition:all 0.2s;" title="使用說明">?</button>
       </div>
     </header>
 
@@ -190,6 +193,47 @@
       <p>僅供個人學習使用 · 請尊重版權</p>
     </footer>
   </main>
+
+  <!-- Help Modal -->
+  <div id="helpModal" style="display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:20px;">
+    <div style="background:rgba(18,18,28,0.95);border:1px solid rgba(255,255,255,0.08);border-radius:24px;max-width:520px;width:100%;padding:36px;position:relative;animation:cardIn 0.3s ease-out;">
+      <button id="helpClose" style="position:absolute;top:16px;right:16px;background:none;border:none;color:rgba(240,240,245,0.4);font-size:1.4rem;cursor:pointer;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:8px;transition:all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.05)';this.style.color='#f0f0f5'" onmouseout="this.style.background='none';this.style.color='rgba(240,240,245,0.4)'">✕</button>
+      <div style="text-align:center;margin-bottom:28px;">
+        <div style="font-size:2.5rem;margin-bottom:12px;">🎵</div>
+        <h2 style="font-size:1.4rem;font-weight:800;background:linear-gradient(135deg,#6c5ce7,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px;">使用說明</h2>
+        <p style="font-size:0.85rem;color:rgba(240,240,245,0.5);">三步驟即可下載高音質 MP3</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:24px;">
+        <div style="display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:18px;">
+          <div style="flex-shrink:0;width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,#6c5ce7,#a855f7);display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:800;color:white;">1</div>
+          <div>
+            <div style="font-weight:600;font-size:0.9rem;margin-bottom:2px;">雙擊 <span style="color:#10b981;font-weight:700;">start.bat</span> 啟動</div>
+            <div style="font-size:0.8rem;color:rgba(240,240,245,0.5);">首次會自動安裝所有工具，無需手動操作</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:18px;">
+          <div style="flex-shrink:0;width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,#6c5ce7,#a855f7);display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:800;color:white;">2</div>
+          <div>
+            <div style="font-weight:600;font-size:0.9rem;margin-bottom:2px;">貼上 YouTube 網址</div>
+            <div style="font-size:0.8rem;color:rgba(240,240,245,0.5);">支援一般網址、短網址、Shorts、Music</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:18px;">
+          <div style="flex-shrink:0;width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,#6c5ce7,#a855f7);display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:800;color:white;">3</div>
+          <div>
+            <div style="font-weight:600;font-size:0.9rem;margin-bottom:2px;">點擊下載，完成！</div>
+            <div style="font-size:0.8rem;color:rgba(240,240,245,0.5);">等待轉換完成後即可下載 320kbps MP3</div>
+          </div>
+        </div>
+      </div>
+      <div style="background:rgba(168,85,247,0.06);border:1px solid rgba(168,85,247,0.12);border-radius:12px;padding:14px 16px;font-size:0.78rem;color:rgba(200,180,255,0.7);line-height:1.7;">
+        <strong style="color:#a855f7;">💡 小提示</strong><br>
+        • 首次啟動需下載工具，請耐心等候<br>
+        • 關閉命令視窗即可停止伺服器<br>
+        • 僅供個人學習使用，請尊重版權
+      </div>
+    </div>
+  </div>
 
   <script src="app.js"></script>
 </body>

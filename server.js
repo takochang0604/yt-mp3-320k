@@ -457,6 +457,10 @@ async function start() {
   app.listen(PORT, () => {
     console.log(`\n📍 開啟瀏覽器前往: http://localhost:${PORT}`);
     console.log('━'.repeat(40) + '\n');
+
+    // 自動開啟瀏覽器
+    const { exec } = require('child_process');
+    exec(`cmd /c start "" "http://localhost:${PORT}"`);
   });
 }
 
